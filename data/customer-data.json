@@ -1,1 +1,13 @@
-﻿[]
+[
+  {
+    "nama_pelanggan": "Test User",
+    "no_pelanggan": "PEL-TEST",
+    "ssid": "Test-SSID",
+    "password": "testpassword123",
+    "no_hp": "081234567890",
+    "paket_internet": "20mbps",
+    "tanggal_instalasi": "2026-09-03",
+    "alamat": "Jl. Test No. 1",
+    "submitted_at": "2026-09-03T01:55:15.275Z"
+  }
+]
