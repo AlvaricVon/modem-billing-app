@@ -60,15 +60,15 @@ export async function POST(req: NextRequest) {
       }
     );
 
-    if (getFileRes.ok) {
-      const fileData = (await getFileRes.json()) as { sha?: string; content?: string };
-      fileSha = fileData.sha ?? null;
-    }
-
     let existingData: unknown[] = [];
-    if (fileSha && getFileRes.ok) {
-      type GithubFile = { content?: string };
-      const fileData = (await getFileRes.json()) as GithubFile;
+
+    if (getFileRes.ok) {
+      const fileData = (await getFileRes.json()) as {
+        sha?: string;
+        content?: string;
+      };
+      fileSha = fileData.sha ?? null;
+
       if (fileData.content) {
         const decoded = Buffer.from(fileData.content, "base64").toString("utf8");
         try {
