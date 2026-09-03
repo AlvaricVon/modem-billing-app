@@ -135,6 +135,19 @@ export default function ModemBillingForm() {
 
             <div className="md:col-span-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">
+                Gmail
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                placeholder="Contoh: email@gmail.com"
+              />
+            </div>
+
+            <div className="md:col-span-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Paket Internet
               </label>
               <select

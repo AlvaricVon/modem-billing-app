@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
     "ssid",
     "password",
     "no_hp",
+    "email",
     "paket_internet",
     "tanggal_instalasi",
     "alamat",
