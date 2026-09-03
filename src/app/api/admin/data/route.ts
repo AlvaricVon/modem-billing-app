@@ -47,7 +47,9 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ data: [] });
     }
 
-    const decoded = Buffer.from(fileData.content, "base64").toString("utf8");
+    const decoded = Buffer.from(fileData.content, "base64")
+      .toString("utf8")
+      .replace(/^\uFEFF/, "");
     const data = JSON.parse(decoded);
     return NextResponse.json({ data: Array.isArray(data) ? data : [] });
   } catch (err) {

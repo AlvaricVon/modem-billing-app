@@ -71,7 +71,9 @@ export async function POST(req: NextRequest) {
       fileSha = fileData.sha ?? null;
 
       if (fileData.content) {
-        const decoded = Buffer.from(fileData.content, "base64").toString("utf8");
+        const decoded = Buffer.from(fileData.content, "base64")
+          .toString("utf8")
+          .replace(/^\uFEFF/, "");
         try {
           existingData = JSON.parse(decoded);
           if (!Array.isArray(existingData)) existingData = [];
